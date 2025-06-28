@@ -13,30 +13,33 @@
 </head>
 
 <body>
-    <div class="container py-4" style="max-width: 400px">
+    <div class="home py-4" style="max-width: 400px">
         <div class="text-center mb-4">
             <img src="../img/logo.png" alt="Logo Culturizados" class="img-fluid" style="max-height: 80px;">
         </div>
 
         <div class="d-grid gap-3">
             <a class="btn eventos" href="../html/event.html">
-                <i class="fas fa-calendar-alt me-2"></i>
+                <i class="fa-solid fa-calendar-days"></i>
                 <p class="text">Eventos</p>
             </a>
 
             <div class="compartidos">
                 <a class="btn codigos">
-                    <i class="fas fa-qrcode me-2"></i> Mis códigos
+                    <i class="fa-solid fa-qrcode"></i>
+                    <p>Mis códigos</p>
                 </a>
                 <a class="btn perfil">
-                    <i class="fas fa-user me-2"></i> Perfil
+                    <i class="fa-solid fa-user"></i>
+                    <p>Perfil</p>
                 </a>
             </div>
 
-            <a class="btn-salir">
-                <i class="fas fa-sign-out-alt me-2"></i> 
+            <button id="logoutBtn" class="btn-salir">
+                <i class="fa-solid fa-right-from-bracket"></i>
                 <p class="text-exit">Cerrar sesión</p>
-            </a>
+            </button>
+
         </div>
 
         <div class="mt-4 text-center">
@@ -48,7 +51,8 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
 
-    <script src="../js/script.js"></script>
+    <script src="../js/pass.js"></script><script src="../js/script.js"></script>
+    
     <script>
         document.querySelector("form").addEventListener("submit", registerUser);
     </script>

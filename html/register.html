@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <title>Culturizados</title>
+</head>
+
+<body>
+    <div class="signup">
+        <div class="container">
+            <h1>Crea tu cuenta</h1>
+            <p>¿Ya tienes una cuenta?<a class="login" href="../index.html">Iniciar sesión</a></p>
+
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" placeholder="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="email" placeholder="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Celular</label>
+                    <div class="d-flex">
+                        <select class="form-select me-2" style="max-width: 120px;" id="countryCode">
+                            <option value="+51">+51</option>
+                            <option value="+1">+1</option>
+                            <option value="+34">+34</option>
+                            <option value="+54">+54</option>
+                            <option value="+57">+57</option>
+                            <!-- Agrega más si deseas -->
+                        </select>
+                        <input type="tel" class="form-control" id="phone" placeholder="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" placeholder="">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </form>
+
+            <p class="terminos">Al continuar, acepta los Términos de servicio de <b>CulturaViva</b> y reconoce nuestra
+                Política de privacidad</p>
+        </div>
+        <img src="../img/logo.png" alt="">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.querySelector("form").addEventListener("submit", registerUser);
+    </script>
+
+
+</body>
+
+</html>

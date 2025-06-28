@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Culturizados</title>
+</head>
+
+<body>
+    <div class="container py-4" style="max-width: 400px">
+        <div class="text-center mb-4">
+            <img src="../img/logo.png" alt="Logo Culturizados" class="img-fluid" style="max-height: 80px;">
+        </div>
+
+        <div class="d-grid gap-3">
+            <a class="btn eventos" href="../html/event.html">
+                <i class="fas fa-calendar-alt me-2"></i>
+                <p class="text">Eventos</p>
+            </a>
+
+            <div class="compartidos">
+                <a class="btn codigos">
+                    <i class="fas fa-qrcode me-2"></i> Mis códigos
+                </a>
+                <a class="btn perfil">
+                    <i class="fas fa-user me-2"></i> Perfil
+                </a>
+            </div>
+
+            <a class="btn-salir">
+                <i class="fas fa-sign-out-alt me-2"></i> 
+                <p class="text-exit">Cerrar sesión</p>
+            </a>
+        </div>
+
+        <div class="mt-4 text-center">
+            <img src="../img/publicidad.gif" class="img-fluid rounded-3" alt="Foto cultura">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.querySelector("form").addEventListener("submit", registerUser);
+    </script>
+</body>
+
+</html>

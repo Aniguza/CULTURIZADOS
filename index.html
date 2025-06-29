@@ -28,12 +28,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                    <div class="input-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" required>
-                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                            <i class="fa-solid fa-eye" id="icon-eye"></i>
-                        </button>
+                    <div class="position-relative">
+                        <input type="password" class="form-control pe-5" id="exampleInputPassword1" required>
+                        <i class="fa-solid fa-eye position-absolute top-50 end-0 translate-middle-y me-3"
+                            id="togglePassword" style="cursor: pointer;"></i>
                     </div>
+
                 </div>
                 <button type="submit" class="btn btn-primary">Iniciar sesión</button>
             </form>

@@ -7,6 +7,7 @@ const eventos = [
         lugar: "Explanada parque infantil Piura",
         imagen: "../img/event-1.png",
         estado: "finalizado",
+        descuento: "20%",
         descripcion: "Los Chapis, colectivo artístico multidisciplinario, toma el escenario con una propuesta provocadora: visuales digitales inspirados en símbolos afrodescendientes, beats electrónicos fusionados con zapateo criollo, y una intervención en vivo que dialoga con las obras permanentes del museo. La noche se entrelaza con testimonios performáticos sobre identidad, memoria y territorio.",
         quiz: "Juega y gana grandes descuentos para este evento",
         reseñas: [
@@ -21,6 +22,7 @@ const eventos = [
         lugar: "Universidad Privada de Piura",
         imagen: "../img/event-2.png",
         estado: "activo",
+        descuento: "15%",
         descripcion: "Déjate envolver por la mística de los Andes en Encantos Andinos, una serie de conciertos dedicados a los majestuosos vientos andinos. Este evento reúne a destacados intérpretes de quena, zampoña, antara y pinkullo en una experiencia musical profundamente conectada con la tierra, la memoria y la espiritualidad ancestral.",
         quiz: "Participa del sorteo con CultureQuiz",
         reseñas: [

@@ -5,7 +5,6 @@ window.addEventListener("DOMContentLoaded", function () {
   if (logoutBtn) {
     logoutBtn.addEventListener("click", function (event) {
       event.preventDefault();
-      localStorage.removeItem("cupones"); // Limpia la sesión
       window.location.href = "../index.html";
     });
   }

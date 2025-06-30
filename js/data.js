@@ -21,7 +21,7 @@ const eventos = [
         lugar: "Universidad Privada de Piura",
         imagen: "../img/event-2.png",
         estado: "activo",
-        descripcion: "Evento folclórico con música andina...",
+        descripcion: "Déjate envolver por la mística de los Andes en Encantos Andinos, una serie de conciertos dedicados a los majestuosos vientos andinos. Este evento reúne a destacados intérpretes de quena, zampoña, antara y pinkullo en una experiencia musical profundamente conectada con la tierra, la memoria y la espiritualidad ancestral.",
         quiz: "Participa del sorteo con CultureQuiz",
         reseñas: [
             { nombre: "Luis", fecha: "30 jun. 2025", estrellas: 4, comentario: "He asistido a un evento similar, una gran experiencia" },

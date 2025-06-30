@@ -2,15 +2,13 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/event.css">
-  <title>Culturizados</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/event.css" />
 </head>
 
 <body>
@@ -21,46 +19,38 @@
       <button class="btn btn-link p-0"><i class="fa-solid fa-house"></i></button>
     </div>
 
-    <div>
-      <div class="section-title">Recientes</div>
+    <div class="section-title">Recientes</div>
+    <div class="event-list mb-4" id="recientes"></div>
 
-      <div class="card-horizontal mb-4">
-        <img src="../img/event-1.png" alt="Noche Mall: Los chapis">
-        <div class="card-body">
-          <span class="badge-fecha">10/06/2025</span>
-          <h6>Noche Mall: Los chapis</h6>
-          <p>Explanada parque infantil Piura</p>
-          <a href="#" class="btn btn-outline-primary btn-sm btn-ver">Ver más</a>
-        </div>
-      </div>
-    </div>
-
-
-    <div>
-      <div class="section-title">Próximamente</div>
-
-      <div class="card-horizontal mb-4 yellow">
-        <img src="../img/event-2.png" alt="Encantos Andinos">
-        <div class="card-body">
-          <span class="badge-fecha">03/07/2025</span>
-          <h6>Encantos Andinos</h6>
-          <p>Universidad Privada de Piura</p>
-          <a href="#" class="btn btn-outline-primary btn-sm btn-ver">Ver más</a>
-        </div>
-      </div>
-
-      <div class="card-horizontal mb-4 yellow">
-        <img src="../img/event-3.png" alt="Festival de Picantiería">
-        <div class="card-body">
-          <span class="badge-fecha">07/07/2025</span>
-          <h6>Festival de Picantiería</h6>
-          <p>Exteriores de la Municipalidad de Piura</p>
-          <a href="#" class="btn btn-outline-primary btn-sm btn-ver">Ver más</a>
-        </div>
-      </div>
-    </div>
-
+    <div class="section-title">Próximamente</div>
+    <div class="event-list mb-4" id="proximamente"></div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="../js/data.js"></script>
+  <script>
+    const recientesContainer = document.getElementById("recientes");
+    const proximamenteContainer = document.getElementById("proximamente");
+
+    eventos.forEach(evento => {
+      const card = document.createElement("div");
+      card.className = `card-horizontal mb-3 ${evento.estado === 'activo' ? 'yellow' : ''}`;
+      card.innerHTML = `
+        <img src="${evento.imagen}" alt="${evento.titulo}">
+        <div class="card-body">
+          <span class="badge-fecha">${evento.fecha}</span>
+          <h6>${evento.titulo}</h6>
+          <p>${evento.lugar}</p>
+          <a href="../html/detalle-evento.html?id=${evento.id}" class="btn btn-outline-primary btn-sm btn-ver">Ver más</a>
+        </div>
+      `;
+      if (evento.estado === 'finalizado') {
+        recientesContainer.appendChild(card);
+      } else {
+        proximamenteContainer.appendChild(card);
+      }
+    });
+  </script>
 </body>
 
 </html>

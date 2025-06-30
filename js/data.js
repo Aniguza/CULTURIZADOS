@@ -9,7 +9,9 @@ const eventos = [
         estado: "finalizado",
         descuento: "20%",
         descripcion: "Los Chapis, colectivo artístico multidisciplinario, toma el escenario con una propuesta provocadora: visuales digitales inspirados en símbolos afrodescendientes, beats electrónicos fusionados con zapateo criollo, y una intervención en vivo que dialoga con las obras permanentes del museo. La noche se entrelaza con testimonios performáticos sobre identidad, memoria y territorio.",
-        quiz: "Juega y gana grandes descuentos para este evento",
+        quiz: [
+
+        ],
         reseñas: [
             { nombre: "Juan", fecha: "20 feb. 2025", estrellas: 5, comentario: "Fue un gran evento, muy entretenido" },
             { nombre: "Ana", fecha: "18 feb. 2025", estrellas: 4, comentario: "Me encantó, pero el lugar estaba muy lleno" }
@@ -24,7 +26,9 @@ const eventos = [
         estado: "activo",
         descuento: "15%",
         descripcion: "Déjate envolver por la mística de los Andes en Encantos Andinos, una serie de conciertos dedicados a los majestuosos vientos andinos. Este evento reúne a destacados intérpretes de quena, zampoña, antara y pinkullo en una experiencia musical profundamente conectada con la tierra, la memoria y la espiritualidad ancestral.",
-        quiz: "Participa del sorteo con CultureQuiz",
+        quiz: [
+            
+        ],
         reseñas: [
             { nombre: "Luis", fecha: "30 jun. 2025", estrellas: 4, comentario: "He asistido a un evento similar, una gran experiencia" },
         ]

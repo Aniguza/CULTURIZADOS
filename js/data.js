@@ -15,7 +15,8 @@ const eventos = [
         reseñas: [
             { nombre: "Juan", fecha: "20 feb. 2025", estrellas: 5, comentario: "Fue un gran evento, muy entretenido" },
             { nombre: "Ana", fecha: "18 feb. 2025", estrellas: 4, comentario: "Me encantó, pero el lugar estaba muy lleno" }
-        ]
+        ],
+        qr: "../img/QR1.png"
     },
     {
         id: 2,
@@ -31,6 +32,7 @@ const eventos = [
         ],
         reseñas: [
             { nombre: "Luis", fecha: "30 jun. 2025", estrellas: 4, comentario: "He asistido a un evento similar, una gran experiencia" },
-        ]
+        ],
+        qr: "../img/QR2.png"
     }
 ];

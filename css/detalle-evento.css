@@ -1,8 +1,45 @@
 .event-detail {
-    max-width: 400px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    align-items: center;
     padding: 2rem;
-    border-radius: 0;
+    position: relative;
+}
+
+.top-icons {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.top-icons a,
+.top-icons i {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--textPrimary-color);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+}
+
+.top-icons a:hover,
+.top-icons i:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 .event-content {

@@ -1,21 +1,46 @@
 .event {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2rem;
-    border-radius: 0;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 0;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.header a,
+.header button {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textPrimary-color);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.header a:hover,
+.header button:hover {
+  background-color: #f9f9f9;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .header h5 {
   margin: 0;
   font-weight: 800;
   color: var(--textPrimary-color);
+  font-size: 1rem;
 }
+
 
 .section-title {
   font-weight: 700;

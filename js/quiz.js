@@ -11,7 +11,7 @@ let intentos = 0; // máximo 2 intentos por pregunta
 
 // Sonidos
 const sonidoCorrecto = new Audio('../mp3/correcta.mp3');
-const sonidoIncorrecto = new Audio('../mp3/perder.mp3');
+const sonidoIncorrecto = new Audio('../mp3/incorrecta.mp3');
 
 function iniciarQuiz(eventoId) {
   eventoActual = eventos.find(e => e.id === eventoId);

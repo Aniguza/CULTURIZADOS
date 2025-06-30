@@ -152,11 +152,16 @@
         localStorage.setItem('quizCompletados', JSON.stringify(nuevosCompletados));
         localStorage.setItem('quizNoObtenido', JSON.stringify(nuevosNoObtenidos));
 
-        // Mostrar mensaje de éxito
+        // 🧹 LIMPIAR CUPÓN
+        let cupones = JSON.parse(localStorage.getItem('cupones')) || [];
+        cupones = cupones.filter(cupon => cupon.id !== eventoId);
+        localStorage.setItem('cupones', JSON.stringify(cupones));
+
+        // Mostrar mensaje
         const mensaje = document.getElementById("mensaje-limpieza");
         mensaje.style.display = "block";
 
-        // Rehabilitar el botón
+        // Rehabilitar botón
         const btnFinalizado = document.getElementById("btn-finalizado");
         btnFinalizado.disabled = false;
         btnFinalizado.textContent = "Intentar nuevamente";
@@ -171,6 +176,7 @@
         setTimeout(() => mensaje.style.display = "none", 3000);
       }
     }
+
     // Agregar botón de limpiar progreso
     const contenedorLimpieza = document.getElementById("contenedor-limpieza");
     contenedorLimpieza.innerHTML = `

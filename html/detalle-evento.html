@@ -36,7 +36,6 @@
 
       <div>
         <h6 class="fw-semibold mb-1">CultureQuiz</h6>
-        <p class="event-quiz small text-muted"></p>
         <a class="btn-finalizado" disable>Finalizado</a>
       </div>
 
@@ -93,7 +92,6 @@
       document.querySelector('.event-image').src = evento.imagen;
       document.querySelector('.event-title').textContent = evento.titulo;
       document.querySelector('.event-desc').textContent = evento.descripcion;
-      document.querySelector('.event-quiz').textContent = evento.quiz;
 
       const reseñasContainer = document.querySelector('.reseñas');
       evento.reseñas.forEach(r => {

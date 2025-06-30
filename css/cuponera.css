@@ -1,0 +1,90 @@
+.cuponera-page {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.mensaje-vacio {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--textSecondary-color);
+  font-size: 0.95rem;
+  padding: 0 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.header a,
+.header button {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textPrimary-color);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.header h5 {
+  margin: 0;
+  font-weight: 800;
+  color: var(--textPrimary-color);
+  font-size: 1rem;
+}
+
+.cupones-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.cupon {
+  width: 220px;
+  border: 2px solid var(--decoration-color);
+  border-radius: 20px;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  background-color: #fcecd6;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.cupon .titulo {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: var(--decoration-color);
+}
+
+.cupon .qr-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin: 0 auto 1rem;
+  cursor: pointer;
+}
+
+.cupon .descuento {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--textSecondary-color);
+}
+
+
+#qrModal img {
+  max-width: 300px;
+  margin: 0 auto;
+}

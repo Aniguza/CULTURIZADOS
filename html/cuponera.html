@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuponera</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/cuponera.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+
+<body>
+  <div class="cuponera-page">
+    <div class="header">
+      <a class="btn btn-link p-0" href="../html/home.html"><i class="fa-solid fa-arrow-left"></i></a>
+      <h5>CUPONERA</h5>
+      <button class="btn btn-link p-0"><i class="fa-solid fa-house"></i></button>
+    </div>
+
+    <section class="cupones-container">
+    </section>
+
+    <div class="modal fade" id="qrModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-3">
+          <img id="qrAmpliado" src="" class="img-fluid" alt="QR ampliado" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const contenedor = document.querySelector('.cupones-container');
+    let cupones = JSON.parse(localStorage.getItem('cupones')) || [];
+
+    cupones = cupones.filter(e => e.estado === 'activo');
+
+    if (cupones.length === 0) {
+      contenedor.innerHTML = `
+        <div class="mensaje-vacio">
+          <p>Resuelve el quiz de tu evento favorito<br>para obtener un <strong>descuento increíble</strong> 🎉</p>
+        </div>
+      `;
+    } else {
+      cupones.forEach(e => {
+        const div = document.createElement('div');
+        div.className = 'cupon';
+        div.innerHTML = `
+          <p class="titulo">${e.titulo}</p>
+          <img src="${e.qr}" alt="QR ${e.titulo}" class="qr-img" data-src="${e.qr}">
+          <p class="descuento">${e.descuento} DE DSCTO</p>
+        `;
+        contenedor.appendChild(div);
+      });
+    }
+
+    document.addEventListener('click', function (e) {
+      if (e.target.classList.contains('qr-img')) {
+        const src = e.target.dataset.src;
+        document.getElementById('qrAmpliado').src = src;
+        const modal = new bootstrap.Modal(document.getElementById('qrModal'));
+        modal.show();
+      }
+    });
+  </script>
+
+  <script src="../js/data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

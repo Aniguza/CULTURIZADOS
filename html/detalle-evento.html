@@ -36,7 +36,7 @@
       <div>
         <h6 class="fw-semibold mb-1">CultureQuiz</h6>
         <p class="event-quiz small text-muted"></p>
-        <button class="btn-finalizado" disabled>Finalizado</button>
+        <button class="btn-finalizado" id="btn-finalizado" disabled>Finalizado</button>
       </div>
 
       <div>
@@ -78,11 +78,14 @@
         estadoBadge.style.backgroundColor = "#F5A623";
         estadoBadge.style.color = "white";
 
-        btnFinalizado.textContent = "Obtén "+evento.descuento + " de dsc";
+        btnFinalizado.textContent = "Ver CultureQuiz";
         btnFinalizado.disabled = false;
         btnFinalizado.style.backgroundColor = "#F5A623";
         btnFinalizado.style.color = "white";
         btnFinalizado.style.cursor = "pointer";
+        btnFinalizado.onclick = () => {
+          window.location.href = `../html/quiz.html?id=${evento.id}`;
+        };
       }
 
       document.querySelector('.event-image').src = evento.imagen;
@@ -105,6 +108,11 @@
       });
     }
   </script>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/quiz.js"></script>
+  
+
 </body>
 
 </html>

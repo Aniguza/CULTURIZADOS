@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Perfil</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/perfil.css" />
+</head>
+
+<body>
+    <div class="perfil-page">
+        <div class="header">
+            <a class="btn btn-link p-0" href="../html/home.html"><i class="fa-solid fa-arrow-left"></i></a>
+            <h5>MI PERFIL</h5>
+            <a class="btn btn-link p-0" href="../html/home.html"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <div class="perfil-info">
+            <div>
+                <h6>Nombre completo</h6>
+                <p id="perfil-nombre">-</p>
+            </div>
+            <div>
+                <h6>Correo electrónico</h6>
+                <p id="perfil-email">-</p>
+            </div>
+            <div>
+                <h6>Teléfono</h6>
+                <p id="perfil-telefono">-</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const user = JSON.parse(localStorage.getItem("user"));
+
+            if (!user) {
+                window.location.href = "../index.html";
+                return;
+            }
+
+            document.getElementById("perfil-nombre").textContent = user.name || "-";
+            document.getElementById("perfil-email").textContent = user.email || "-";
+            document.getElementById("perfil-telefono").textContent = user.phone || "-";
+
+        });
+    </script>
+</body>
+
+</html>

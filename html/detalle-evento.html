@@ -48,6 +48,8 @@
       <div class="text-center">
         <a href="" class="btn btn-ver-mas">Ver más</a>
       </div>
+
+      <div class="text-center my-3" id="contenedor-limpieza"></div>
     </div>
   </div>
 
@@ -138,6 +140,48 @@
         `;
       });
     }
+
+    function limpiarProgreso(eventoId) {
+      if (confirm("¿Seguro que deseas borrar el progreso de este evento?")) {
+        const completados = JSON.parse(localStorage.getItem('quizCompletados')) || [];
+        const noObtenidos = JSON.parse(localStorage.getItem('quizNoObtenido')) || [];
+
+        const nuevosCompletados = completados.filter(e => e !== eventoId);
+        const nuevosNoObtenidos = noObtenidos.filter(e => e !== eventoId);
+
+        localStorage.setItem('quizCompletados', JSON.stringify(nuevosCompletados));
+        localStorage.setItem('quizNoObtenido', JSON.stringify(nuevosNoObtenidos));
+
+        // Mostrar mensaje de éxito
+        const mensaje = document.getElementById("mensaje-limpieza");
+        mensaje.style.display = "block";
+
+        // Rehabilitar el botón
+        const btnFinalizado = document.getElementById("btn-finalizado");
+        btnFinalizado.disabled = false;
+        btnFinalizado.textContent = "Intentar nuevamente";
+        btnFinalizado.style.backgroundColor = "#F5A623";
+        btnFinalizado.style.color = "white";
+        btnFinalizado.style.cursor = "pointer";
+        btnFinalizado.onclick = () => {
+          window.location.href = `../html/quiz.html?id=${eventoId}`;
+        };
+
+        // Ocultar mensaje después de 3 segundos
+        setTimeout(() => mensaje.style.display = "none", 3000);
+      }
+    }
+    // Agregar botón de limpiar progreso
+    const contenedorLimpieza = document.getElementById("contenedor-limpieza");
+    contenedorLimpieza.innerHTML = `
+      <button class="btn btn-outline-danger btn-sm" onclick="limpiarProgreso(${id})">
+        🧹 Limpiar intento del quiz
+      </button>
+      <p id="mensaje-limpieza" class="text-success small mt-2" style="display: none;">
+        ✔️ Progreso del evento limpiado
+      </p>
+    `;
+
   </script>
 
   <script src="../js/data.js"></script>

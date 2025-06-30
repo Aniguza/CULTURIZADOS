@@ -3,103 +3,103 @@
   margin: 0 auto;
   padding: 2rem;
   border-radius: 0;
-}
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-}
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
 
-.header a,
-.header button {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--textPrimary-color);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  transition: all 0.2s ease;
-}
+  .header a,
+  .header button {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--textPrimary-color);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+  }
 
-.header a:hover,
-.header button:hover {
-  background-color: #f9f9f9;
-  transform: scale(1.05);
-  cursor: pointer;
-}
+  .header a:hover,
+  .header button:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 
-.header h5 {
-  margin: 0;
-  font-weight: 800;
-  color: var(--textPrimary-color);
-  font-size: 1rem;
-}
-
-
-.section-title {
-  font-weight: 700;
-  color: var(--textSecondary-color);
-  margin: 0.5rem 0rem 0.5rem;
-  font-size: 1rem;
-}
-
-.card-horizontal {
-  display: flex;
-  background-color: #fff;
-  gap: 10px;
-  overflow: hidden;
-}
-
-.card-horizontal img {
-  width: 45%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.card-body {
-  flex: 1;
-}
-
-.card-body h6 {
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-bottom: 0.3rem;
-  color: var(--textPrimary-color);
-}
-
-.card-body p {
-  font-size: 0.8rem;
-  color: var(--textSecondary-color);
-  margin-bottom: 0.5rem;
-}
-
-.badge-fecha {
-  display: inline-block;
-  background-color: red;
-  color: white;
-  font-size: 0.7rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 6px;
-  margin-bottom: 0.3rem;
-}
+  .header h5 {
+    margin: 0;
+    font-weight: 800;
+    color: var(--textPrimary-color);
+    font-size: 1rem;
+  }
 
 
-.btn-ver {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 8px;
-  border: 1px solid var(--textSecondary-color);
-  color: var(--textSecondary-color);
-}
+  .section-title {
+    font-weight: 700;
+    color: var(--textSecondary-color);
+    margin: 0.5rem 0rem 0.5rem;
+    font-size: 1rem;
+  }
+
+  .card-horizontal {
+    display: flex;
+    background-color: #fff;
+    gap: 10px;
+    overflow: hidden;
+  }
+
+  .card-horizontal img {
+    width: 45%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .card-body {
+    flex: 1;
+  }
+
+  .card-body h6 {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    color: var(--textPrimary-color);
+  }
+
+  .card-body p {
+    font-size: 0.8rem;
+    color: var(--textSecondary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .badge-fecha {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    margin-bottom: 0.3rem;
+  }
 
 
-.card-horizontal.yellow .badge-fecha {
-  background-color: #F5A623;
-  color: white;
+  .btn-ver {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 8px;
+    border: 1px solid var(--textSecondary-color);
+    color: var(--textSecondary-color);
+  }
+
+
+  .card-horizontal.yellow .badge-fecha {
+    background-color: #F5A623;
+    color: white;
+  }
 }

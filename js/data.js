@@ -42,7 +42,7 @@ const eventos = [
         titulo: "Piurarde",
         fecha: "05/07/2025",
         lugar: "Jr. Arequipa 327 (local del APRA)",
-        imagen: "../img/event-2.png",
+        imagen: "../img/evento2.jpg",
         estado: "activo",
         descuento: "15%",
         descripcion: "Evento musical celebrado en Piura desde el 2024, es un punto de encuentro entre géneros como el rock, metal, punk, reggae y más. Aquí puedes disfrutar y conocer a distintas bandas con música propia que te harán vibrar con sus ritmos.",

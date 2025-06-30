@@ -4,11 +4,54 @@
     background-color: var(--bg-color);
     font-family: var(--fontFamily-font);
 
-    h1{
+    .title {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .home {
+        padding: 0;
+        background-color: transparent;
+        margin: 0;
+    }
+    .modal-dialog{
+        margin: 0 30px;
+    }
+    .btn-sis{
+        text-decoration: none;
+        padding: 7.5px 16px;
+        background-color: #895CF7;
+        color: white;
+        border-radius: 6px;
+    }
+
+    h1 {
         font-size: 24px;
         font-weight: bold;
         color: var(--textSecondary-color);
     }
+
+    i {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--textPrimary-color);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        transition: all 0.2s ease;
+        text-decoration: none;
+    }
+
+    i:hover {
+        background-color: #f9f9f9;
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
     .quiz-container {
         display: flex;
         justify-content: center;

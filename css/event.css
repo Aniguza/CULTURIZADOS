@@ -50,7 +50,6 @@
 
   .card-horizontal {
     display: flex;
-    background-color: #fff;
     gap: 10px;
     overflow: hidden;
   }
@@ -59,6 +58,7 @@
     width: 45%;
     object-fit: cover;
     border-radius: 8px;
+    height: 150px;
   }
 
   .card-body {

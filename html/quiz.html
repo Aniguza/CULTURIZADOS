@@ -9,12 +9,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <title>Document</title>
 </head>
 
 <body>
     <div class="quiz">
-        <h1>CultureQuiz</h1>
+        <div class="title">
+            <h1>CultureQuiz</h1>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="home" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <a>
+                    <i class="fa-solid fa-house"></i>
+                </a>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            ¿Estás seguro de regresar? <br>
+                            Si regresas se te reiniciará el quizz.
+                        </div>
+                        <div class="modal-footer">
+                            <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</a>
+                            <a href="../html/event.html" class="btn-sis">Sí</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <div class="quiz-container">
             <!-- Aquí se cargará el quiz -->
         </div>
@@ -26,6 +56,25 @@
         const id = parseInt(params.get('id'));
         if (!isNaN(id)) iniciarQuiz(id);
     </script>
+    <!-- Bootstrap JS + Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Modal anuncio a pantalla completa, sin cerrar -->
+    <div class="modal fade" id="modalAnuncio" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content bg-black border-0">
+                <div class="modal-body p-0">
+                    <video id="videoAnuncio" style="width: 100vw; height: 100vh; object-fit: cover" playsinline>
+                        <source src="../img/anunciojuego.mp4" type="video/mp4">
+                        Tu navegador no soporta video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 
 </html>

@@ -36,7 +36,7 @@
 
       <div>
         <h6 class="fw-semibold mb-1">CultureQuiz</h6>
-        <p class="event-quiz small text-muted"></p>
+        <p class="event-quiz small text-muted">Juega y gana grandes descuentos para este evento</p>
         <button class="btn-finalizado" id="btn-finalizado" disabled>Finalizado</button>
       </div>
 
@@ -67,6 +67,10 @@
       document.querySelector('.btn-ver-mas').href = `../html/premio.html?id=${evento.id}`;
       document.querySelector('.btn-finalizado').href = `../html/premio.html?id=${evento.id}`;
 
+      const completados = JSON.parse(localStorage.getItem('quizCompletados')) || [];
+      const noObtenidos = JSON.parse(localStorage.getItem('quizNoObtenido')) || [];
+      const yaCompletado = completados.includes(evento.id);
+      const yaFallado = noObtenidos.includes(evento.id);
 
       if (evento.estado === 'finalizado') {
         estadoBadge.textContent = "Finalizado";
@@ -78,6 +82,29 @@
         btnFinalizado.style.backgroundColor = "#FCE8C4";
         btnFinalizado.style.color = "#A67C52";
         btnFinalizado.style.cursor = "not-allowed";
+
+      } else if (yaCompletado) {
+        estadoBadge.textContent = "Activo";
+        estadoBadge.style.backgroundColor = "#F5A623";
+        estadoBadge.style.color = "white";
+
+        btnFinalizado.textContent = "Ya obtuviste tu premio 😁";
+        btnFinalizado.disabled = true;
+        btnFinalizado.style.backgroundColor = "#FCE8C4";
+        btnFinalizado.style.color = "#A67C52";
+        btnFinalizado.style.cursor = "not-allowed";
+
+      } else if (yaFallado) {
+        estadoBadge.textContent = "Activo";
+        estadoBadge.style.backgroundColor = "red";
+        estadoBadge.style.color = "#555";
+
+        btnFinalizado.textContent = "Lo sentimos, no pudiste obtener tu descuento ☹️";
+        btnFinalizado.disabled = true;
+        btnFinalizado.style.backgroundColor = "#ddd";
+        btnFinalizado.style.color = "#666";
+        btnFinalizado.style.cursor = "not-allowed";
+
       } else {
         estadoBadge.textContent = "Activo";
         estadoBadge.style.backgroundColor = "#F5A623";
@@ -96,7 +123,6 @@
       document.querySelector('.event-image').src = evento.imagen;
       document.querySelector('.event-title').textContent = evento.titulo;
       document.querySelector('.event-desc').textContent = evento.descripcion;
-      document.querySelector('.event-quiz').textContent = evento.quiz;
 
       const reseñasContainer = document.querySelector('.reseñas');
       evento.reseñas.forEach(r => {
@@ -116,7 +142,7 @@
 
   <script src="../js/data.js"></script>
   <script src="../js/quiz.js"></script>
-  
+
 
 </body>
 

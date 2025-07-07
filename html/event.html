@@ -33,28 +33,46 @@
     const recientesContainer = document.getElementById("recientes");
     const proximamenteContainer = document.getElementById("proximamente");
 
-    eventos.forEach(evento => {
-      const card = document.createElement("div");
-      card.className = `card-horizontal mb-3 ${evento.estado === 'activo' ? 'yellow' : ''}`;
-      card.innerHTML = `
-        <img src="${evento.imagen}" alt="${evento.titulo}">
-        <div class="card-body">
-          <span class="badge-fecha">${evento.fecha}</span>
-          <h6>${evento.titulo}</h6>
-          <p>${evento.lugar}</p>
-          <a href="../html/detalle-evento.html?id=${evento.id}" class="btnver btn-sm">Ver más</a>
-          ${evento.estado === 'finalizado'
-                ? `<button class="btnjugar btn-sm btn-secondary" disabled>Finalizado</button>`
-                : `<a href="../html/quiz.html?id=${evento.id}" class="btnjugar btn-sm">Juega aquí</a>`
-              }
-        </div>
-      `;
-      if (evento.estado === 'finalizado') {
-        recientesContainer.appendChild(card);
-      } else {
-        proximamenteContainer.appendChild(card);
-      }
-    });
+    const quizCompletados = JSON.parse(localStorage.getItem("quizCompletados")) || [];
+const quizNoObtenido = JSON.parse(localStorage.getItem("quizNoObtenido")) || [];
+
+eventos.forEach(evento => {
+  const card = document.createElement("div");
+  card.className = `card-horizontal mb-3 ${evento.estado === 'activo' ? 'yellow' : ''}`;
+
+  // Verifica si el quiz ya se hizo
+  const yaGanado = quizCompletados.includes(evento.id);
+  const yaPerdido = quizNoObtenido.includes(evento.id);
+
+  let botonJugarHTML = "";
+
+  if (evento.estado === "finalizado" || yaGanado || yaPerdido) {
+    let texto = "Finalizado";
+    if (yaGanado) texto = "Ganaste";
+    if (yaPerdido) texto = "Perdido";
+    botonJugarHTML = `<button class="btnjugar btn-sm btn-secondary" disabled>${texto}</button>`;
+  } else {
+    botonJugarHTML = `<a href="../html/quiz.html?id=${evento.id}" class="btnjugar btn-sm">Juega aquí</a>`;
+  }
+
+  card.innerHTML = `
+    <img src="${evento.imagen}" alt="${evento.titulo}">
+    <div class="card-body">
+      <span class="badge-fecha">${evento.fecha}</span>
+      <h6>${evento.titulo}</h6>
+      <p>${evento.lugar}</p>
+      <a href="../html/detalle-evento.html?id=${evento.id}" class="btnver btn-sm">Ver más</a>
+      ${botonJugarHTML}
+    </div>
+  `;
+
+  if (evento.estado === 'finalizado') {
+    recientesContainer.appendChild(card);
+  } else {
+    proximamenteContainer.appendChild(card);
+  }
+});
+
   </script>
 </body>
 

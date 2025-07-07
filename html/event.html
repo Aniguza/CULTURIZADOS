@@ -42,7 +42,11 @@
           <span class="badge-fecha">${evento.fecha}</span>
           <h6>${evento.titulo}</h6>
           <p>${evento.lugar}</p>
-          <a href="../html/detalle-evento.html?id=${evento.id}" class="btn btn-outline-primary btn-sm btn-ver">Ver más</a>
+          <a href="../html/detalle-evento.html?id=${evento.id}" class="btnver btn-sm">Ver más</a>
+          ${evento.estado === 'finalizado'
+                ? `<button class="btnjugar btn-sm btn-secondary" disabled>Finalizado</button>`
+                : `<a href="../html/quiz.html?id=${evento.id}" class="btnjugar btn-sm">Juega aquí</a>`
+              }
         </div>
       `;
       if (evento.estado === 'finalizado') {

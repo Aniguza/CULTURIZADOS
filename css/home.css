@@ -1,3 +1,78 @@
+/* Estilo general de los modales */
+  .modal-content {
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border: none;
+  }
+
+  .modal-header {
+    background-color: #f8f9fa;
+    border-bottom: none;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .modal-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .btn-close {
+    background-color: #ffe8a1;
+    border-radius: 50%;
+    padding: 0.5rem;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+
+  .modal-body p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Botón de "Ver instrucciones" */
+  .btn-link {
+    color: #0d6efd;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+
+  .btn-link:hover {
+    color: #084298;
+  }
+
+  /* Botón de jugar */
+  .btn-warning {
+    background-color: #ffc107;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .btn-warning:hover {
+    background-color: #e0a800;
+  }
+
+  /* Botón de volver */
+  .btn-secondary {
+    background-color: #6c757d;
+    border-radius: 12px;
+    font-weight: bold;
+    border: none;
+  }
+
+  .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+
 .home {
     display: flex;
     flex-direction: column;

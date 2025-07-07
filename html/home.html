@@ -13,6 +13,47 @@
 </head>
 
 <body>
+    <!-- Modal Principal: Descuento -->
+    <div class="modal fade" id="modalDescuento" tabindex="-1" aria-labelledby="modalDescuentoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modalDescuentoLabel">🎮 ¡Juega para ganarte el descuento!</h2><br>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Ingresa a la sección de eventos para comenzar</p>
+                    <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalInstrucciones"
+                        data-bs-dismiss="modal">Ver instrucciones</a>
+                    <br />
+                    <a href="../html/event.html"><button onclick="empezarJuego()" class="btn btn-warning mt-3">Ir a eventos</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Secundario: Instrucciones -->
+    <div class="modal fade" id="modalInstrucciones" tabindex="-1" aria-labelledby="modalInstruccionesLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalInstruccionesLabel">📝 Instrucciones del juego</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>1. Lee atentamente cada pregunta.</p>
+                    <p>2. Selecciona la respuesta correcta.</p>
+                    <p>3. Si te equivocas tendrás una oportunidad más solo viendo un anuncio.</p>
+                    <p>4. Al completar el juego, recibirás un código QR con tu descuento.</p>
+                    <button class="btn btn-secondary mt-3" data-bs-toggle="modal" data-bs-target="#modalDescuento"
+                        data-bs-dismiss="modal">Volver</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="home py-4" style="max-width: 400px">
         <div class="text-center mb-4">
             <img src="../img/logo.png" alt="Logo Culturizados" class="img-fluid" style="max-height: 80px;">
@@ -51,8 +92,10 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
 
-    <script src="../js/pass.js"></script><script src="../js/script.js"></script>
-    
+    <script src="../js/pass.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/modalinicio.js"></script>
+
     <script>
         document.querySelector("form").addEventListener("submit", registerUser);
     </script>

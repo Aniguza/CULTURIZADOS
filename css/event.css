@@ -89,14 +89,33 @@
   }
 
 
-  .btn-ver {
+  .btnver,
+  .btnjugar {
     font-size: 0.75rem;
     padding: 0.25rem 0.6rem;
     border-radius: 8px;
     border: 1px solid var(--textSecondary-color);
     color: var(--textSecondary-color);
+    text-decoration: none;
   }
 
+  .btnver:hover {
+    background-color: #d4d4d4;
+  }
+
+  .btnjugar:hover {
+    background-color: #F5A623;
+    color: black;
+  }
+
+  .btnjugar[disabled] {
+    pointer-events: none;
+    background-color: #ccc !important;
+    color: #666 !important;
+    border: none;
+    cursor: not-allowed;
+    opacity: 0.8;
+  }
 
   .card-horizontal.yellow .badge-fecha {
     background-color: #F5A623;
